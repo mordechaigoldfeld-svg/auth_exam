@@ -6,7 +6,8 @@ export type registerType = {
 
     name: string,
     password: string,
-    email: string
+    email: string,
+    image?:string
 }
 
 export type loginType = {
@@ -21,5 +22,6 @@ export type userType = {
     username: string,
     email: string,
     createdAt:string,
-    id:string
+    id:string,
+    image?:string
 }

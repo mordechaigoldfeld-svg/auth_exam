@@ -12,11 +12,11 @@ import { getIdByToken } from "../UTILS/tokenGen.js";
 
 export async function createUserControler(req, res) {
 
-    const { email, password, name } = req.body
+    const { email, password, name, image } = req.body
 
     try {
 
-        const newUser = await createUserService(email, password, name)
+        const newUser = await createUserService(email, password, name,image)
         res.status(201).json(newUser)
 
     } catch (error) {

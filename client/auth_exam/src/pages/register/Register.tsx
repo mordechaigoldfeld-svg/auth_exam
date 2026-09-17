@@ -13,6 +13,8 @@ export default function Register() {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [data, setData] = useState('')
+  const [image, setImage] = useState('')
+
   const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -23,7 +25,7 @@ export default function Register() {
 
     try {
 
-      const data: any = await registerApi({ email, password, name })
+      const data: any = await registerApi({ email, password, name,image })
       console.log(data);
 
       setData(data.message)
@@ -69,7 +71,12 @@ export default function Register() {
 
           <div>
             <label htmlFor="password">password</label>
-            <input id="password" type="password" required value={password} placeholder="enter tour password" onChange={(e) => setPassword(e.target.value)} />
+            <input id="password" type="password" required value={password} placeholder="enter your password" onChange={(e) => setPassword(e.target.value)} />
+          </div>
+
+          <div>
+            <label htmlFor="image">image</label>
+            <input id="image" type="text" required value={image} placeholder="enter an image link" onChange={(e) => setImage(e.target.value)} />
           </div>
 
           <button type="submit">send</button>

@@ -1,5 +1,5 @@
 import { Navigate, Outlet, replace, useNavigate } from "react-router"
-
+import './Protected.css'
 
 export default function ProtectedPage() {
 

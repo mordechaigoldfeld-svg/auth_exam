@@ -10,14 +10,14 @@ import { returnUserWithoutPass } from "../MODELS/userModels.js";
 
 
 
-export async function createUserService(email, password, name) {
+export async function createUserService(email, password, name,image) {
 
     const exists = await findByEmail(email)
     
     if (exists) throw createError(401, 'user alredy exists')
     const hashPass = await hashPassword(password)
 
-    const newUser = await insertUserDal({ email, passwordHash: hashPass, name })
+    const newUser = await insertUserDal({ email, passwordHash: hashPass, name,image })
     return {
         "message": "User registered successfully"
     }

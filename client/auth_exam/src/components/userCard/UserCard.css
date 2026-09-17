@@ -1,0 +1,54 @@
+.user-container{
+    height: 100vh;
+    border: 2px solid black;
+    background-color: blue;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+.nav{
+    background-color: aquamarine;
+}
+
+.button{
+
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+button:hover{
+
+      background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+
+}
+
+
+.main{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card{
+
+    border: solid 3px black;
+    border-radius: 5px;
+}
+.name{
+
+    color: blue;
+    border-bottom: 2px solid black;
+}
+.email{
+
+    color: rgb(6, 6, 83);
+}
+.date{}

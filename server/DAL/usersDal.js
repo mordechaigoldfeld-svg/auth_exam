@@ -6,9 +6,9 @@ import { createUserModel } from "../MODELS/userModels.js"
 const users = db.collection('users')
 
 
-export async function insertUserDal({ email, name, passwordHash }) {
+export async function insertUserDal({ email, name, passwordHash,image }) {
 
-    const user = { ...createUserModel({ email: email.toLowerCase(), passwordHash, name }) }
+    const user = { ...createUserModel({ email: email.toLowerCase(), passwordHash, name,image }) }
 
     const { insertedId } = await users.insertOne(user)
 
@@ -16,6 +16,15 @@ export async function insertUserDal({ email, name, passwordHash }) {
     return user
 
 }
+
+
+// console.log(await insertUserDal({
+//     email:"test124@gmsail.com",
+//     password:"123456",
+//     name:"testing",
+//     image:"test"
+// }));
+
 
 
 export async function findByEmail(email) {
@@ -39,7 +48,7 @@ export async function findById(id) {
 }
 
 
-// console.log(await findById('6aab91ebefa402d4b6088ad5'));
+// console.log(await findById('6aabf79d1af30cfea17080c9'));
 
 
 
