@@ -8,7 +8,8 @@ export async function registerApi(body: registerType) {
         const register = await instance.post('/register', {
             name: body.name,
             password: body.password,
-            email: body.email
+            email: body.email,
+            image:body.image
         })
 
         return register.data

@@ -54,7 +54,7 @@ export default function UserCard() {
 
             <div className="main">
                 <div className="card">
-                    <img src={user?.image} alt="" />
+                    <img src={user?.image} alt="image" />
                     <h1 className="name"> hi: {user?.username} !!</h1>
                     <p className="email">your email is: {user?.email}</p>
                     <p className="date">created at: {user?.createdAt}</p>
