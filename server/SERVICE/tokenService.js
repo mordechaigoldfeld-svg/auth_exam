@@ -9,3 +9,7 @@ export function getToken(authorization) {
     if (!token) throw createError(401, 'token error');
     return token
 }
+
+
+
+

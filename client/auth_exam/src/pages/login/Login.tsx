@@ -47,7 +47,7 @@ export default function Login() {
                 <form onSubmit={submitHandler}>
                     <div>
                         <label htmlFor="password">password</label>
-                        <input id="password" type="text" required placeholder="enter your passsword" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input id="password" type="password" required placeholder="enter your passsword" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="email">email</label>

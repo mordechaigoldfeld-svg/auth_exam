@@ -45,9 +45,9 @@ export async function loginApi(body: loginType) {
 
 
 
-export async function getUserApi(token:string,email:string) {
+export async function getUserApi(token:string) {
 
-    const data = await instance.get(`/getUser/${email}`,{
+    const data = await instance.get(`/getUser`,{
         headers:{
         authorization:`Bearer${token}`
         }
@@ -57,4 +57,4 @@ export async function getUserApi(token:string,email:string) {
 
 }
 
-// console.log(await getUserApi('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFiYTYxNjYwOTg5YzU0OWU2MDE4MDkiLCJpYXQiOjE3ODk2MzQxMjIsImV4cCI6MTc4OTYzNzcyMn0.T_HXCrNmhS5z4HLfGzCNuBR2idua8K5xF-rPh3UF7e4','test390mm@gkmail.com'));
+// console.log(await getUserApi('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YWFiZGQyNWY1NGVlZjk2MjQ5M2ZmMTkiLCJpYXQiOjE3ODk2NDgyMDcsImV4cCI6MTc4OTY1MTgwN30.xdYXCY0tN-l0hOMD8G25eOWoEHnN-tdcrr6Thb6SUV0'));

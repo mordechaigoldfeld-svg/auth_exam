@@ -14,3 +14,12 @@ export type loginType = {
     password: string,
     email: string
 }
+
+
+export type userType = {
+
+    username: string,
+    email: string,
+    createdAt:string,
+    id:string
+}

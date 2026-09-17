@@ -9,7 +9,7 @@ const router = express.Router()
 export default router
 
 
-router.get('/getUser/:email',tokenValidator,getUserControler)
+router.get('/getUser',tokenValidator,getUserControler)
 
 
 router.post('/register',validcreateFields,createUserControler)

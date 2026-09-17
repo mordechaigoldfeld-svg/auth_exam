@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb"
 import db from "../DB/mongo_config.js"
 import { createUserModel } from "../MODELS/userModels.js"
 
@@ -27,6 +28,18 @@ export async function findByEmail(email) {
 
 }
 
+
+export async function findById(id) {
+
+
+    const user = await users.findOne({_id:new ObjectId(id)})
+    
+    return user
+
+}
+
+
+// console.log(await findById('6aab91ebefa402d4b6088ad5'));
 
 
 

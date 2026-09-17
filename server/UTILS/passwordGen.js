@@ -14,4 +14,3 @@ export async function comparePassword(paswword,hashPassword) {
 
 
 
-// console.log(await comparePassword('12345','$2b$10$kanNvK.5jTOegzF4GdR/..N3BPoYhiVJCGKLKTvHQsD6DCslg2Oo.'));

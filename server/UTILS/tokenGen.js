@@ -13,4 +13,12 @@ export function verifyToken(token){
 }
 
 
-// console.log(await verifyToken('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTYiLCJpYXQiOjE3ODk2Mjc5OTgsImV4cCI6MTc4OTYzMTU5OH0.4qHpnUU9HGt5kS2h7XpijsMFz3MXWcHUOKgig58Dm7Y'));
+
+
+
+export async function getIdByToken(token) {
+
+    return jwt.decode(token).userId
+    
+}
+

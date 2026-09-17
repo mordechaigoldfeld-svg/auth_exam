@@ -1,8 +1,9 @@
 import { email } from "zod";
 import { findByEmail } from "../DAL/usersDal.js";
 import { returnUserWithoutPass } from "../MODELS/userModels.js";
-import { createUserService,getUserByEmail,loginService } from "../SERVICE/usersService.js";
+import { createUserService, getUserByEmail, getUserById, loginService } from "../SERVICE/usersService.js";
 import { createUserSchema } from "../SCHEMA/userSchema.js";
+import { getIdByToken } from "../UTILS/tokenGen.js";
 
 
 
@@ -14,7 +15,7 @@ export async function createUserControler(req, res) {
     const { email, password, name } = req.body
 
     try {
-       
+
         const newUser = await createUserService(email, password, name)
         res.status(201).json(newUser)
 
@@ -50,10 +51,10 @@ export async function loginControler(req, res) {
 
 export async function getUserControler(req,res) {
 
-    const {email} = req.params
+    const {userId} = req.user
 
     try {
-        const user = await getUserByEmail(email)
+        const user = await getUserById(userId)
         res.status(200).json(user)
 
     } catch (error) {
@@ -64,3 +65,5 @@ export async function getUserControler(req,res) {
     }
 
 }
+
+

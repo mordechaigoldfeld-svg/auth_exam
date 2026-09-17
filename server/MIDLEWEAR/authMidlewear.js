@@ -13,6 +13,8 @@ export async function tokenValidator(req, res, next) {
 
         const token = getToken(authorization)
         const payload = verifyToken(token)
+        console.log('payload',payload);
+        
         req.user = payload
         next()
 

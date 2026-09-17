@@ -1,5 +1,5 @@
 import { compare } from "bcrypt";
-import { findByEmail,insertUserDal} from "../DAL/usersDal.js";
+import { findByEmail,findById,insertUserDal} from "../DAL/usersDal.js";
 import { comparePassword,hashPassword } from "../UTILS/passwordGen.js";
 import { createError } from "../UTILS/createError.js";
 import { generateToken } from "../UTILS/tokenGen.js";
@@ -35,7 +35,8 @@ export async function loginService(email, password) {
     if (!exists) throw createError(404, 'user not found')
     const auth = await comparePassword(password, exists.passwordHash)
     if (!auth) throw createError(401, 'invalid validation please check your password');
-    const token = generateToken(exists._id.toString())
+    
+    const token = generateToken(exists._id)
     return { email, token }
 
 
@@ -58,4 +59,17 @@ export async function getUserByEmail(email) {
 
 
 // console.log(await getUserByEmail('test6@gmail.com'));
+
+export async function getUserById(id) {
+
+    const exists = await findById(id)
+
+    if (!exists) throw createError(404, 'user not found')
+    
+    return returnUserWithoutPass(exists)    
+
+}
+
+
+// console.log(await getUserById('6aab91ebefa402d4b6088ad5'));
 
